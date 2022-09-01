@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/neweintraglayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3D5C6">
+
+
+    <RadioGroup
+        android:id="@+id/edit_eintrag_stimmung_r"
+        android:layout_width="251dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/edit_eintrag_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.992"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_eintrag_titel"
+        app:layout_constraintVertical_bias="0.0">
+
+        <RadioButton
+            android:id="@+id/stim_vhappy_radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/ic_baseline_sentiment_very_satisfied_24"
+            android:onClick="onRadioButtonClicked"
+            android:textColorHighlight="#420000"
+            android:textColorLink="#420000" />
+
+        <RadioButton
+            android:id="@+id/stim_happy_radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/ic_baseline_sentiment_satisfied_alt_24"
+            android:onClick="onRadioButtonClicked"
+            android:textColorLink="#420000" />
+
+        <RadioButton
+            android:id="@+id/stim_content_radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/ic_baseline_sentiment_satisfied_24"
+            android:onClick="onRadioButtonClicked"
+            android:textColorLink="#420000" />
+
+        <RadioButton
+            android:id="@+id/stim_dissa_radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/ic_baseline_sentiment_dissatisfied_24"
+            android:onClick="onRadioButtonClicked"
+            android:textColorLink="#420000" />
+
+        <RadioButton
+            android:id="@+id/stim_sad_radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/ic_baseline_sentiment_very_dissatisfied_24"
+            android:onClick="onRadioButtonClicked"
+            android:textColorLink="#420000" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/edit_eintrag_titel"
+        android:layout_width="378dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_corners_background"
+        android:fontFamily="sans-serif-light"
+        android:hint="Ich bin dankbar für..."
+        android:inputType="textAutoComplete"
+        android:minHeight="@dimen/min_height"
+        android:padding="12dp"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_eintrag_datum" />
+
+    <EditText
+        android:id="@+id/edit_eintrag_stimmung"
+        android:layout_width="378dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-light"
+        android:gravity="top"
+        android:hint="Stimmung"
+        android:inputType="textAutoComplete"
+        android:minHeight="@dimen/min_height"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_eintrag_titel" />
+
+    <EditText
+        android:id="@+id/edit_eintrag_text"
+        android:layout_width="376dp"
+        android:layout_height="132dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_corners_background"
+        android:fontFamily="sans-serif-light"
+        android:hint="Eintrag"
+        android:inputType="textMultiLine"
+        android:lines="8"
+        android:maxLines="10"
+        android:minHeight="@dimen/min_height"
+        android:minLines="6"
+        android:padding="12dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_eintrag_stimmung" />
+
+    <EditText
+        android:id="@+id/edit_eintrag_bild"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="sans-serif-light"
+        android:hint="Bild"
+        android:inputType="textAutoComplete"
+        android:minHeight="@dimen/min_height"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_eintrag_text" />
+
+    <EditText
+        android:id="@+id/edit_eintrag_audio"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:fontFamily="sans-serif-light"
+        android:hint="Audio"
+        android:inputType="textAutoComplete"
+        android:minHeight="@dimen/min_height"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_eintrag_text" />
+
+    <ImageButton
+        android:id="@+id/new_eintrag_back"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_corners_background"
+        android:tint="#555555"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+
+    <ImageButton
+        android:id="@+id/ibutton_eintrag_save"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/rounded_corners_button"
+        android:tint="#F9EBE4"
+        app:layout_constraintEnd_toStartOf="@+id/ibutton_eintrag_delete"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_save_24" />
+
+    <ImageButton
+        android:id="@+id/ibutton_eintrag_delete"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/rounded_corners_button"
+        android:tint="#F9EBE4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_delete_24" />
+
+    <ImageButton
+        android:id="@+id/ibutton_eintrag_add_bild"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_corners_button"
+        android:tint="#F9EBE4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_eintrag_text"
+        app:srcCompat="@drawable/ic_baseline_photo_camera_24" />
+
+    <ImageButton
+        android:id="@+id/ibutton_eintrag_add_audio"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_corners_button"
+        android:tint="#F9EBE4"
+        app:layout_constraintStart_toEndOf="@+id/ibutton_eintrag_add_bild"
+        app:layout_constraintTop_toBottomOf="@+id/edit_eintrag_text"
+        app:srcCompat="@drawable/ic_baseline_record_voice_over_24" />
+
+    <ImageView
+        android:id="@+id/eintragImageView"
+        android:layout_width="376dp"
+        android:layout_height="136dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_eintrag_audio"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageButton
+        android:id="@+id/eintragAudioPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eintragImageView"
+        app:srcCompat="@drawable/ic_baseline_play_circle_24" />
+
+    <TextView
+        android:id="@+id/text_eintrag_datum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="Datum"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Stimmung"
+        app:layout_constraintEnd_toStartOf="@+id/edit_eintrag_stimmung_r"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="@+id/edit_eintrag_stimmung"
+        app:layout_constraintTop_toBottomOf="@+id/edit_eintrag_titel" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
